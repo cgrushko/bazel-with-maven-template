@@ -1,0 +1,100 @@
+options:
+  languages: [ "java" ]
+  resolvers:
+    - id: "mavencentral"
+      type: "default"
+      url: https://repo.maven.apache.org/maven2/
+  transitivity: runtime_deps
+  versionConflictPolicy: highest
+
+dependencies:
+  junit:
+    junit:
+      lang: java
+      version: "4.12"
+
+  com.google.guava:
+    guava:
+      version: "23.0"
+      lang: java
+
+  org.slf4j:
+    slf4j-api:
+      version: "1.7.25"
+      lang: java
+
+  log4j:
+    log4j:
+      version: "1.2.17"
+      lang: java
+
+  commons-io:
+    commons-io:
+      version: "2.5"
+      lang: java
+
+  org.mockito:
+    mockito-all:
+      version: "2.0.2-beta"
+      lang: java
+
+  javax.servlet:
+    javax.servlet-api:
+      version: "4.0.0"
+      lang: java
+
+  commons-logging:
+    commons-logging:
+      version: "1.2"
+      lang: java
+
+  org.apache.commons:
+    commons-lang3:
+      version: "3.6"
+      lang: java
+
+  joda-time:
+    joda-time:
+      version: "2.9.9"
+      lang: java
+
+  com.google.inject:
+    guice:
+      version: "4.1.0"
+      lang: java
+
+  com.google.dagger:
+    dagger:
+      version: "2.11"
+      lang: java
+
+  com.google.truth:
+    truth:
+      version: "0.35"
+      lang: java
+
+  com.google.jimfs:
+    jimfs:
+      version: "1.1"
+      lang: java
+
+  args4j:
+    args4j:
+      version: "2.33"
+      lang: java
+
+  com.google.re2j:
+    re2j:
+      version: "1.1"
+      lang: java
+
+  com.google.auto.value:
+    auto-value:
+      version: "1.5"
+      lang: java
+
+  com.google.code.findbugs:
+    jsr305:
+      version: "3.0.2"
+      lang: java
+
