@@ -1,9 +1,15 @@
 A turn-key template repository to develop Java code using [Bazel](http://bazel.build),
 with prepopulated common dependencies.
 
-See the example `./Foo.java` and `./BUILD` files.
+# Try it
 
-## Created using
+```bash
+$ bazel build :Foo
+```
+
+This compiles `./Foo.java` using the `java_library` defined in `./BUILD`.
+
+# Created using
 
     wget https://github.com/johnynek/bazel-deps/archive/master.zip
     unzip master.zip
