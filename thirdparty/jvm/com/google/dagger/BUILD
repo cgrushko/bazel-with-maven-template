@@ -1,10 +1,10 @@
 java_library(
-    name = "jimfs",
+    name = "dagger",
     exports = [
-        "//external:jar/com/google/jimfs/jimfs"
+        "//external:jar/com/google/dagger/dagger"
     ],
     runtime_deps = [
-        "//third_party/jvm/com/google/guava:guava"
+        "//thirdparty/jvm/javax/inject:javax_inject"
     ],
     visibility = [
         "//visibility:public"

@@ -4,7 +4,7 @@ java_library(
         "//external:jar/junit/junit"
     ],
     runtime_deps = [
-        "//third_party/jvm/org/hamcrest:hamcrest_core"
+        "//thirdparty/jvm/org/hamcrest:hamcrest_core"
     ],
     visibility = [
         "//visibility:public"

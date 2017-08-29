@@ -4,9 +4,9 @@ java_library(
         "//external:jar/com/google/truth/truth"
     ],
     runtime_deps = [
-        "//third_party/jvm/com/google/errorprone:error_prone_annotations",
-        "//third_party/jvm/com/google/guava:guava",
-        "//third_party/jvm/junit:junit"
+        "//thirdparty/jvm/com/google/errorprone:error_prone_annotations",
+        "//thirdparty/jvm/com/google/guava:guava",
+        "//thirdparty/jvm/junit:junit"
     ],
     visibility = [
         "//visibility:public"
