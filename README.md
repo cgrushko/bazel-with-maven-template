@@ -4,7 +4,11 @@ with prepopulated common dependencies.
 # Try it
 
 ```bash
-$ bazel build :Foo
+# Run the test, which first builds exatly everything needed
+$ bazel test //src/test/java/foo:FooTest
+
+# Or just build
+$ bazel test //src/main/java/foo:Foo
 ```
 
 This compiles `./Foo.java` using the `java_library` defined in `./BUILD`.
