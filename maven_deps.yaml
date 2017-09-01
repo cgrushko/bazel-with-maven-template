@@ -6,6 +6,7 @@ options:
       url: https://repo.maven.apache.org/maven2/
   transitivity: runtime_deps
   versionConflictPolicy: highest
+  thirdPartyDirectory: "thirdparty/jvm"
 
 dependencies:
   junit:
