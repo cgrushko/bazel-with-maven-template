@@ -27,3 +27,11 @@ handle such directory, see https://github.com/johnynek/bazel-deps/issues/59)
     find thirdparty/ -name BUILD | xargs sed -i '' -e 's%3rdparty%thirdparty%g'
     # On Linux (i.e., GNU sed):
     find thirdparty/ -name BUILD | xargs sed -i 's%3rdparty%thirdparty%g'
+
+# Things I'm unhappy with in this example
+
+1. "thirdparty" should be named "third_party", which is blocked on https://github.com/bazelbuild/bazel/issues/3639
+2. We shouldn't use `bind()` - instead, we should reference the maven jars directly. We actually don't even need a `java_library` in thirdparty/ - we can use `java_import` directly on the jars we get from `maven_jar`.
+3. The `//thirdparty:load.bzl` file is unnecessary - bazel-deps should inline it into `//thirdparty:workspace.bzl`. (https://github.com/johnynek/bazel-deps/issues/60)
+4. Configuring annotation prcessors is manualy (https://github.com/johnynek/bazel-deps/issues/62)
+5. Test-only dependencies (such as //thirdparty/jvm/junit:junit) should be marked have `testonly = 1`, lest they mistakenly end up in production code.
