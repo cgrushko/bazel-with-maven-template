@@ -15,9 +15,30 @@ This compiles `./Foo.java` using the `java_library` defined in `./BUILD`.
 
 # Created using
 
+Assuming you're in the root of this repository,
+
+    ROOT=$(pwd)
     wget https://github.com/johnynek/bazel-deps/archive/master.zip
     unzip master.zip
-    ./gen_maven_deps.sh generate -r $PATH_TO_bazel-with-maven-template -d maven_deps.yaml -s thirdparty/workspace.bzl
+    pushd bazel-deps-master
+    bazel build src/scala/com/github/johnynek/bazel_deps/parseproject_deploy.jar  # should take around 1 minute
+    ./gen_maven_deps.sh generate -r "$ROOT" -d maven_deps.yaml -s thirdparty/workspace.bzl
+    popd
+
+# Adding New Dependencies
+
+Suppose you want to use `org.reactivestreams:reactive-streams:jar:1.0.1`.
+Add the following to the end of `maven_deps.yaml` (indentation is important):
+
+```
+  org.reactivestreams:
+    reactive-streams:
+      version: "1.0.1"
+      lang: java
+```
+
+Then follow the instructions in "Created using", above.
+After running, you should see a new file named `thirdparty/jvm/org/reactivestreams/BUILD`. 
 
 # Things I'm unhappy with in this example
 
