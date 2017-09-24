@@ -21,7 +21,7 @@ Assuming you're in the root of this repository,
     wget https://github.com/johnynek/bazel-deps/archive/master.zip
     unzip master.zip
     pushd bazel-deps-master
-    bazel build src/scala/com/github/johnynek/bazel_deps/parseproject_deploy.jar  # should take around 1 minute
+    bazel build //src/scala/com/github/johnynek/bazel_deps:parseproject_deploy.jar  # should take around 1 minute
     ./gen_maven_deps.sh generate -r "$ROOT" -d maven_deps.yaml -s thirdparty/workspace.bzl
     popd
 
