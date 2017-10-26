@@ -1,4 +1,16 @@
-def maven_dependencies(callback):
+def declare_maven(hash):
+    native.maven_jar(
+        name = hash["name"],
+        artifact = hash["artifact"],
+        sha1 = hash["sha1"],
+        repository = hash["repository"]
+    )
+    native.bind(
+        name = hash["bind"],
+        actual = hash["actual"]
+    )
+
+def maven_dependencies(callback = declare_maven):
     callback({"artifact": "aopalliance:aopalliance:1.0", "lang": "java", "sha1": "0235ba8b489512805ac13a8f9ea77a1ca5ebe3e8", "repository": "https://repo.maven.apache.org/maven2/", "name": "aopalliance_aopalliance", "actual": "@aopalliance_aopalliance//jar", "bind": "jar/aopalliance/aopalliance"})
     callback({"artifact": "args4j:args4j:2.33", "lang": "java", "sha1": "bd87a75374a6d6523de82fef51fc3cfe9baf9fc9", "repository": "https://repo.maven.apache.org/maven2/", "name": "args4j_args4j", "actual": "@args4j_args4j//jar", "bind": "jar/args4j/args4j"})
     callback({"artifact": "com.google.auto.value:auto-value:1.5", "lang": "java", "sha1": "ed31b6bc2e3723c26ea86439862d12ad311b64b3", "repository": "https://repo.maven.apache.org/maven2/", "name": "com_google_auto_value_auto_value", "actual": "@com_google_auto_value_auto_value//jar", "bind": "jar/com/google/auto/value/auto_value"})
